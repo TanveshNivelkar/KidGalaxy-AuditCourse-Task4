@@ -9,7 +9,7 @@ The name field in the form cannot be left empty. If the field is left empty a po
 Email id must contain an @ sign. If the email format is incorrect then a warning about wrong email is shown:
 <img width="659" alt="kg4(3)" src="https://user-images.githubusercontent.com/88765317/133802061-7a9377df-8b30-4fda-a485-43d031289a59.png">
 
-If the create password field and the confirm password field have different value , which is not acceptable ,it shows an error message saying " Password does not match":
+If the create password field and the confirm password field have different value,it shows an error message saying"Password does not match":
 <img width="661" alt="kg4(4)" src="https://user-images.githubusercontent.com/88765317/133802529-6de17c83-bb90-45a1-8c58-f95748662d55.png">
 
 As the user clicks the submit button with all the form data filled. The data is displayed on console:
