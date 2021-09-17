@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testing</title>
+    <link rel="stylesheet" type="text/css" href="editing.css">
+    <script type="text/javascript" src="script.js"></script>
+    <style>
+    #background-image{
+        background-image:url("https://iso.500px.com/wp-content/uploads/2016/07/stock-photo-164727153.jpg");
+        height:100%;
+        padding-top: 50px;
+        color: white;
+        width:100%;
+    }
+    select {
+        width:200px;
+        height:40px;
+        font-size:20px
+            
+    }
+        </style>
+ 
+</head>
+
+<body>
+    
+    <div id="background-image">
+            <center>
+                <div id="content">
+                    <h1>THE CAL ZONE</h1>
+                    <h2>The only thing we love more than food is you!</h2>
+                    
+                </div>
+            </center>
+        
+        
+        
+
+
+        <center>
+            
+    <form id="form">
+        
+        <fieldset>
+            <div id="title">
+                <h1>Table Booking</h1>
+            </div>
+           
+            <br>
+        <div>
+            <!--<label for="name">First Name</label>-->
+            <input type="text" name="name" id="fname" placeholder="First Name" required>
+        </div>
+            <br>
+            
+            
+        <div>
+            <!--<label for="name">Last Name</label>-->
+            <input type="text" name="names" id="lname" placeholder="Last Name" required>
+        </div>
+            <br>
+                
+        <div>
+            <!--<label for="email">Email</label>-->
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+           
+        
+        <div>
+            <h1> Meal you want to attend:</h1>
+            
+            <div>
+                <input type="checkbox" value="breakfast" id="breakfast" name="ch">
+                <label for="breakfast">Breakfast</label>
+                
+            </div>
+            
+            <div>
+                <input type="checkbox" value="lunch" id="lunch" name="ch">
+                <label for="lunch">Lunch</label>
+                
+            </div>
+            <div>
+                <input type="checkbox" value="dinner" id="dinner" name="ch">
+                <label for="dinner">Dinner</label>
+                
+            </div>
+            <div>
+                <input type="checkbox" value="teatime" id="teatime" name="ch">
+                <label for="teatime">Coffee</label>
+                
+            </div>
+            
+            
+            
+        <div>
+            <h2> Table booking for :</h2>
+            
+            <div>
+                <input type="radio" name="table" id="table" value="two">
+                <label for="two">Couple</label>
+                
+            </div>
+            <div>
+                <input type="radio" name="table" id="table" value="five">
+                <label for="five">Family</label>
+                
+            </div>
+            <div>
+                <input type="radio" name="gender" id="table" value="party">
+                <label for="party">Partyy</label>
+                
+            </div>
+                
+        </div>
+            
+        <div>
+            <h2>Choose your Drink:</h2>
+            <label for="drinks"></label>
+            <select id="drinks" name="drinks" form="form" >
+                
+                <option value="Lychee Martini">Lychee Martini</option>
+                <option value="Blue Lagoon">Blue Lagoon</option>
+                <option value="Mai Tai">Mai Tai</option>
+                <option value="Bahama Mama">Bahama Mama</option>
+                
+            </select>
+
+        </div>
+            <br>
+        
+        
+
+        <div>
+            <!--<label for="phone">Phone</label>-->
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+        </div>
+            <br>
+        <div>
+            <!--<label for="date">Birthdate</label>-->
+            <input type="date" name="date" id="date" placeholder="Birthdate">
+        </div>
+            <br>
+
+        <label>
+            <!--Create Password-->
+            <input type="password" id="crpassword" name="crpassword" placeholder="Create Password" required><br>
+        </label>
+            <br>
+        
+        <label>
+            <!--Confirm Password-->
+            <input type="password" id="conpassword" name="conpassword" placeholder="Confirm Password" required><br>
+            <span id="password"></span>
+        </label><br>
+        <button type="reset" onclick = "fun();">Reset</button>
+        <button type="submit">Submit</button>
+        <br><br>
+            
+        </fieldset>
+          
+    </form>
+        </center>
+        </div>
+            
+            <script type="text/javascript">
+
+        var form = document.getElementById('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            
+            var mail = document.getElementById('email').value;
+           
+            var phone = document.getElementById('phone').value;
+            
+            var date = document.getElementById('date').value;
+            var crpswrd = document.getElementById('crpassword').value;
+            var conpswrd = document.getElementById('conpassword').value;
+            
+            
+            
+            
+            var table = document.getElementById('table').value;
+            var drinks = document.getElementById('drinks').value;
+            if (crpswrd != conpswrd) {
+                document.getElementById('password').innerHTML = "password does not match";
+            }
+            else {
+                console.log(' ------- ');
+                console.log('Name= ' + fname);
+                console.log('Name= ' + lname);
+                console.log('Email= ' + mail);
+                
+                
+               var markedCheckbox = document.getElementsByName('ch');
+
+        for (var checkbox of markedCheckbox) {
+
+            if (checkbox.checked){
+
+                console.log('Meal attending:');
+            console.log(checkbox.value + ' ');}
+
+        }
+
+                
+                console.log('table= ' + table);
+                console.log('drink= ' + drinks);
+                console.log('phone= ' + phone);
+                console.log('date= ' + date);
+                console.log('create password= ' + crpswrd);
+                document.getElementById('password').style.display = "none";
+            }
+        }
+        )
+        
+    </script>
+    
+    
+    
+
+
+</body>
+
+</html>
